@@ -1,0 +1,556 @@
+/* =========================================================================
+   INICIO DEL ARCHIVO CSS - VARIABLES GLOBALES DE COLOR (INTAP PERÚ)
+   ========================================================================= */
+:root {
+    --main-green: #8CC63F; 
+    --main-black: #050505; 
+    --active-orange: #F57C00; 
+    --off-white: #f5f5f5; 
+    --text-on-dark: #cccccc; 
+    --text-on-light: #333333; 
+}
+
+/* =========================================================================
+   ESTILOS GENERALES Y RESETEOS
+   ========================================================================= */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; 
+}
+
+body { 
+    font-family: 'Open Sans', sans-serif; 
+    margin: 0; 
+    padding-top: 80px; 
+    color: var(--text-on-light); 
+    background-color: white; 
+    line-height: 1.6; 
+}
+
+h1, h2, h3, h4 { font-family: 'Roboto', sans-serif; font-weight: 700; margin-top: 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section-padding { padding: 80px 0; }
+.btn { display: inline-block; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; }
+
+/* =========================================================================
+   TOPBAR
+   ========================================================================= */
+.topbar { 
+    position: fixed; 
+    top: 0; left: 0; width: 100%; 
+    height: 80px; 
+    background-color: var(--main-black); 
+    color: white; 
+    z-index: 1000; 
+    display: flex; align-items: center; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+}
+.topbar-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+
+.logo-container { display: flex; align-items: center; text-decoration: none; color: white; gap: 10px; }
+.topbar-logo { height: 45px; width: auto; border-radius: 50%; background: white; padding: 3px; object-fit: contain; }
+.logo-text { font-size: 1.2rem; font-weight: bold; }
+.logo-subtitle { color: var(--main-green); font-weight: 400; font-size: 0.95rem; margin-left: 5px;}
+
+.topbar-menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; }
+.topbar-link { text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; color: white; padding: 10px 0; transition: color 0.3s; position: relative; }
+
+.topbar-link:hover { color: var(--main-green); }
+.topbar-link:hover::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: var(--main-green); }
+
+.topbar-link.active { color: var(--active-orange) !important; font-weight: 700; }
+.topbar-link.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: var(--active-orange); }
+
+@media (max-width: 768px) {
+    .topbar-menu { display: none; } 
+    .logo-subtitle { display: none; } 
+}
+
+/* =========================================================================
+   HERO SECTION
+   ========================================================================= */
+#hero { 
+    position: relative; 
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('ejemplo1.png'); 
+    background-size: cover; background-position: center; 
+    color: white; text-align: center; 
+    padding: 150px 0 100px 0; 
+    border-bottom: 5px solid var(--main-green); 
+}
+#hero h1 { font-size: 3.5rem; text-transform: uppercase; margin-bottom: 15px; color: var(--main-green); letter-spacing: 2px; }
+#hero p { font-size: 1.3rem; margin-bottom: 40px; color: #ccc; max-width: 700px; margin-left: auto; margin-right: auto; }
+.btn-hero { background-color: var(--main-green); color: var(--main-black); box-shadow: 0 4px 15px rgba(140, 198, 63, 0.4); }
+.btn-hero:hover { background-color: #6C9F31; transform: translateY(-3px); }
+
+.hero-overlay-icon { position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%); width: 120px; height: 120px; background-color: var(--main-green); 
+    background-image: url('Fotos_Hero/textura.png'); 
+    background-size: cover; 
+    border-radius: 50%; border: 5px solid #000; box-shadow: 0 0 30px rgba(0,0,0,0.5); z-index: 2; display: flex; align-items: center; justify-content: center; 
+}
+.hero-overlay-icon span { font-size: 40px; font-weight: bold; color: var(--main-black); letter-spacing: -2px; }
+
+/* =========================================================================
+   TÍTULOS GLOBALES DE SECCIONES
+   ========================================================================= */
+.mission-title, .courses-title, .partners-title, .gallery-title, .instructors-premium-title, .section-title { text-align: center; margin-bottom: 50px; }
+.mission-title h2, .courses-title h2, .partners-title h2, .gallery-title h2, .instructors-premium-title h2 { font-size: 2rem; color: var(--main-green); text-transform: uppercase; letter-spacing: 2px; }
+.mission-title p, .partners-title p, .gallery-title p, .instructors-premium-title p { font-size: 1.2rem; color: #555; margin-top: 5px; }
+
+/* =========================================================================
+   MISIÓN Y VALORES
+   ========================================================================= */
+#mission { background-color: var(--off-white); }
+.values-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+.value-card { background: white; border-radius: 8px; padding: 30px; width: calc(33.33% - 30px); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid var(--main-green); transition: transform 0.3s; }
+.value-card:hover { transform: translateY(-5px); }
+.value-icon { font-size: 40px; color: var(--main-green); margin-bottom: 15px; }
+
+/* =========================================================================
+   ZONA CURSOS (FONDO NEGRO, PREMIUM)
+   ========================================================================= */
+#courses { 
+    background-color: var(--main-black); 
+    overflow: hidden; 
+}
+.glide__slide { padding: 30px 0; height: auto; }
+
+.course-card-premium { 
+    background: white; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3); 
+    border-top: 5px solid var(--main-green); 
+    display: flex; flex-direction: column; 
+    height: 100%; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+    position: relative; 
+}
+/* NUEVA CLASE PARA LA IMAGEN GRANDE DE LA TARJETA */
+.card-image-full { 
+    width: 100%; 
+    height: 540px; /* Altura aumentada para ocupar el espacio del texto */
+    object-fit: cover; /* Asegura que la imagen de 800x1000 encaje perfecto sin deformarse */
+    background-color: #ddd;
+    flex-grow: 1; /* Empuja la imagen para que llene todo el espacio superior */
+    display: block;
+}
+
+/* AJUSTE DEL BOTÓN PARA QUE QUEDE PEGADO ABAJO COMO UNA BARRA */
+.btn-card-premium { 
+    background-color: var(--main-green); 
+    color: var(--main-black); 
+    padding: 15px; /* Un poco más de espacio (gordito) para que destaque */
+    text-transform: uppercase; 
+    font-size: 0.95rem; 
+    border-radius: 0; /* Quitamos los bordes redondos para que se fusione con la base de la tarjeta */
+    font-weight: 700; 
+    text-align: center; 
+    text-decoration: none; 
+    display: block; 
+    width: 100%; 
+    box-sizing: border-box; 
+    transition: background 0.3s;
+    margin: 0; /* Aseguramos que no haya espacio blanco entre la foto y el botón */
+}
+.btn-card-premium:hover { 
+    background-color: var(--active-orange); 
+    color: white;
+}
+
+.glide-courses .glide__arrows { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; pointer-events: none; }
+.glide-courses .glide__arrow { pointer-events: auto; background-color: var(--main-green); color: var(--main-black); border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; transition: background 0.3s; opacity: 0.8; }
+.glide-courses .glide__arrow:hover { opacity: 1; background-color: #6C9F31; color: white;}
+.glide-courses .glide__arrow--left { left: 10px; }
+.glide-courses .glide__arrow--right { right: 10px; }
+.glide-courses .glide__bullet { background-color: rgba(255,255,255,0.3); }
+.glide-courses .glide__bullet--active { background-color: var(--main-green); }
+
+/* =========================================================================
+   GALERÍA
+   ========================================================================= */
+.gallery-section { background-color: #f8f9fa; }
+.gallery-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+.gallery-item { position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: calc(25% - 15px); height: 250px; transition: transform 0.3s; }
+.gallery-item:hover { transform: translateY(-5px); }
+.gallery-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.gallery-item:hover .gallery-image { transform: scale(1.1); }
+.gallery-caption { position: absolute; bottom: -100%; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; padding: 20px 10px; font-size: 0.9rem; font-weight: 600; text-align: center; transition: bottom 0.3s; }
+.gallery-item:hover .gallery-caption { bottom: 0; }
+
+/* =========================================================================
+   ESTILOS PARA LA SECCIÓN INSTRUCTORES (FONDO NEGRO, FOTO CON CÍRCULO VERDE)
+   ========================================================================= */
+.instructors-premium-section {
+    background-color: var(--main-black); 
+    padding: 80px 0;
+    color: white;
+}
+
+.instructors-premium-container { text-align: center; }
+
+.instructors-premium-title h2 { font-size: 2.2rem; color: var(--main-green); text-transform: uppercase; letter-spacing: 2px; }
+.instructors-premium-title p { font-size: 1.2rem; color: #ccc; margin-top: 5px; }
+
+.instructors-premium-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+    justify-content: center;
+}
+
+.instructor-premium-card {
+    background-color: transparent; 
+    border: none; 
+    padding: 10px;
+    width: calc(20% - 20px); 
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.instructor-premium-card:hover {
+    transform: translateY(-8px);
+}
+
+.instructor-premium-img-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--main-green), #6C9F31); 
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    box-shadow: 0 4px 15px rgba(140, 198, 63, 0.2); 
+}
+
+.instructor-premium-img {
+    width: 95%; 
+    height: auto;
+    object-fit: cover;
+    border: none; 
+}
+
+.instructor-premium-info { text-align: center; }
+
+.instructor-premium-name-bar {
+    background-color: var(--active-orange); 
+    color: white; 
+    padding: 6px 18px;
+    border-radius: 20px; 
+    display: inline-block;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.instructor-premium-name-bar h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.instructor-premium-role {
+    font-size: 0.85rem;
+    color: #cccccc; 
+    line-height: 1.5;
+}
+
+/* =========================================================================
+   SOCIOS (LOGOS INFINITOS)
+   ========================================================================= */
+#partners-wall { background-color: white; overflow: hidden; }
+.glide-logos .glide__slides { display: flex; align-items: center; }
+.logo-item { display: flex; justify-content: center; align-items: center; height: 100px; padding: 10px; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s; }
+.logo-item:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
+.logo-item img { max-height: 100%; max-width: 150px; object-fit: contain; }
+
+/* =========================================================================
+   CONTACTO Y FOOTER
+   ========================================================================= */
+#contact { background-color: var(--main-black); color: white; border-top: 5px solid var(--main-green); }
+.contact-content { text-align: center; }
+.contact-content h2 { font-size: 2.2rem; text-transform: uppercase; color: var(--main-green); margin-bottom: 15px; }
+.contact-buttons { display: flex; gap: 20px; justify-content: center; margin-bottom: 40px; }
+.btn-whatsapp-premium { background-color: var(--main-green); color: var(--main-black); text-decoration: none; padding: 12px 24px; border-radius: 4px; font-weight: bold;}
+.btn-whatsapp-premium:hover { background-color: #6C9F31; transform: translateY(-3px); color: white;}
+.btn-quote-premium { background-color: transparent; border: 2px solid white; color: white; text-decoration: none; padding: 12px 24px; border-radius: 4px; font-weight: bold;}
+.btn-quote-premium:hover { background-color: white; color: var(--main-black); transform: translateY(-3px); }
+footer { text-align: center; padding: 20px 0; background-color: #000; color: #666; font-size: 0.8rem; border-top: 1px solid #1a1a1a; }
+
+/* =========================================================================
+   BOTÓN DE WHATSAPP FLOTANTE
+   ========================================================================= */
+.whatsapp-floating-btn { 
+    position: fixed; 
+    bottom: 30px; 
+    left: 30px; 
+    width: 65px; 
+    height: 65px; 
+    background-color: #25D366; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+    z-index: 999; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+    text-decoration: none; 
+    
+    color: white; 
+    font-size: 40px; 
+}
+.whatsapp-floating-btn:hover { 
+    transform: scale(1.1); 
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); 
+    color: white;
+}
+
+/* =========================================================================
+   RESPONSIVIDAD GENERAL Y CATÁLOGO
+   ========================================================================= */
+@media (max-width: 1200px) { .instructor-premium-card { width: calc(25% - 20px); } }
+@media (max-width: 992px) {
+    .value-card { width: calc(50% - 30px); }
+    .gallery-item { width: calc(50% - 15px); }
+    .instructor-premium-card { width: calc(33.333% - 20px); }
+    #hero h1 { font-size: 2.5rem; }
+}
+@media (max-width: 768px) {
+    .value-card { width: 100%; }
+    .gallery-item { width: 100%; }
+    .instructor-premium-card { width: calc(50% - 20px); }
+    .contact-buttons { flex-direction: column; }
+    
+    /* Ajuste para que el catálogo de Heyzine encaje bien en celular */
+    .catalogo-wrapper iframe { height: 400px !important; }
+}
+@media (max-width: 480px) { 
+    .instructor-premium-card { width: 100%; } 
+}
+
+/* =========================================================================
+   PÁGINA DE VERIFICACIÓN DE CERTIFICADOS (DISEÑO TIPO TARJETA OSCURA)
+   ========================================================================= */
+
+/* Fondo específico para la página de verificación */
+body.bg-dark-verification {
+    background-color: #0f1115; /* Fondo oscuro de la imagen de referencia */
+    color: var(--text-on-dark);
+}
+
+.verificacion-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px); /* Resta altura del topbar y footer */
+    padding: 40px 20px;
+}
+
+.verificacion-card {
+    background-color: #1a1d24; /* Color de la tarjeta */
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #2a2e35;
+    text-align: center;
+}
+
+.verificacion-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.verificacion-card .card-subtitle {
+    font-size: 0.9rem;
+    color: #8892b0;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Caja de Estado (Válido / Inválido) */
+.status-box {
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+.status-box.valid {
+    background-color: rgba(140, 198, 63, 0.1); 
+    border: 1px solid var(--main-green);
+    color: var(--main-green);
+}
+
+.status-box.invalid {
+    background-color: rgba(245, 124, 0, 0.1); 
+    border: 1px solid var(--active-orange);
+    color: var(--active-orange);
+}
+
+/* Grupos de Datos (Nombre, Curso, etc) */
+.data-group {
+    text-align: left;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #2a2e35;
+    padding-bottom: 15px;
+}
+
+.data-group:last-of-type {
+    border-bottom: none;
+}
+
+.data-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #8892b0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.data-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #e6f1ff;
+    word-break: break-word;
+}
+
+/* Indicador de vigencia (El puntito de color) */
+.status-vigente {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--main-green);
+}
+
+.status-vencido {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--active-orange);
+}
+
+.status-vigente .dot, .status-vencido .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-vigente .dot { background-color: var(--main-green); }
+.status-vencido .dot { background-color: var(--active-orange); }
+
+/* Footer de la tarjeta */
+.verificacion-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #2a2e35;
+}
+
+.verificacion-footer p {
+    font-size: 0.85rem;
+    color: #8892b0;
+    margin-bottom: 15px;
+}
+
+.footer-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-whatsapp-small, .btn-email-small {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-whatsapp-small {
+    background-color: var(--main-green);
+    color: var(--main-black);
+}
+
+.btn-whatsapp-small:hover {
+    background-color: #6C9F31;
+    color: white;
+}
+
+.btn-email-small {
+    background-color: transparent;
+    border: 1px solid #8892b0;
+    color: #8892b0;
+}
+
+.btn-email-small:hover {
+    background-color: #8892b0;
+    color: white;
+    border-color: white;
+}
+
+/* Animación de carga inicial */
+.loading-state {
+    padding: 40px 0;
+    color: var(--main-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.loading-state i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.loading-state h2 {
+    color: white;
+}
+
+.loading-state p {
+    color: #8892b0;
+    font-size: 0.9rem;
+}
+
+/* =========================================================================
+   CAJAS DE ALERTA (CADUCADO / ANULADO)
+   ========================================================================= */
+.alert-box {
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Estilo exacto de la tercera imagen para "Caducado" */
+.alert-box.warning {
+    background-color: rgba(255, 69, 58, 0.15); /* Fondo rojizo oscuro */
+    color: #ff9f0a; /* Texto anaranjado/amarillento */
+    border-left: 4px solid #ff453a; /* Borde izquierdo rojo vivo */
+}
+
+/* Color naranja para la fecha de vencimiento cuando se muestra como texto */
+.text-orange {
+    color: var(--active-orange) !important;
+    font-weight: 700;
+}
