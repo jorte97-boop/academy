@@ -68,8 +68,10 @@ document.addEventListener("DOMContentLoaded", function() {
         // === PON AQUÍ LA URL DE TU WEB APP DE GOOGLE APPS SCRIPT ===
         const API_URL = "https://script.google.com/macros/s/AKfycbxX9-qB7hfpTp194v20yRjiFzlCio3khJM_vb-udQqtRByFcMs5uaI9qp9AKjq5LLj5/exec";
 
-        // 2. Hacemos la consulta a la Hoja de Cálculo
-        fetch(API_URL + "?codigo=" + encodeURIComponent(codigoId))
+// 2. Hacemos la consulta a la Hoja de Cálculo pasando el User Agent
+        const infoDispositivo = navigator.userAgent; // Captura el celular/navegador
+        
+        fetch(API_URL + "?codigo=" + encodeURIComponent(codigoId) + "&ua=" + encodeURIComponent(infoDispositivo))
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
@@ -130,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="verificacion-footer">
                     <p>¿Necesitas validar más detalles?</p>
                     <div class="footer-buttons">
-                        <a href="https://wa.me/51987260390" class="btn btn-whatsapp-small" target="_blank"><i class="fab fa-whatsapp"></i> Soporte WhatsApp</a>
+                        <a href="https://wa.me/51945844059" class="btn btn-whatsapp-small" target="_blank"><i class="fab fa-whatsapp"></i> Soporte WhatsApp</a>
                         <a href="mailto:academy@intapperueirl.com" class="btn btn-email-small"><i class="fas fa-envelope"></i> Enviar Correo</a>
                     </div>
                 </div>
@@ -149,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
                 <div class="verificacion-footer">
                     <div class="footer-buttons">
-                        <a href="https://wa.me/51987260390" class="btn btn-whatsapp-small" target="_blank"><i class="fab fa-whatsapp"></i> Contactar Soporte</a>
+                        <a href="https://wa.me/519458440590" class="btn btn-whatsapp-small" target="_blank"><i class="fab fa-whatsapp"></i> Contactar Soporte</a>
                     </div>
                 </div>
             `;
